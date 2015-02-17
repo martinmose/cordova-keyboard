@@ -3,7 +3,7 @@ Keyboard
 
 > The `Keyboard` object provides some functions to customize the iOS keyboard.
 
-This plugin has only been tested in Cordova 3.2 or greater, and its use in previous Cordova versions is not recommended (potential conflict with keyboard customization code present in the core in previous Cordova versions). 
+This plugin has only been tested in Cordova 3.2 or greater, and its use in previous Cordova versions is not recommended (potential conflict with keyboard customization code present in the core in previous Cordova versions).
 
 If you do use this plugin in an older Cordova version (again, not recommended), you have to make sure the HideKeyboardFormAccessoryBar and KeyboardShrinksView preference values are *always* false, and only use the API functions to turn things on/off.
 
@@ -118,13 +118,34 @@ Keyboard.isVisible
 Determine if the keyboard is visible.
 
     if (Keyboard.isVisible) {
-    	// do something
+        // do something
     }
 
 Description
 -----------
 
 Read this property to determine if the keyboard is visible.
+
+
+Supported Platforms
+-------------------
+
+- iOS
+
+Keyboard.automaticScrollToTopOnHiding
+=================
+
+Specifies whenether content of page would be autoamtically scrolled to the top of the page
+when keyboard is hiding.
+
+    Keyboard.automaticScrollToTopOnHiding = true;
+
+Description
+-----------
+
+Set this to true if you need that page scroll to beginning when keyboard is hiding.
+This is allows to fix issue with elements declared with position: fixed,
+after keyboard is hiding.
 
 
 Supported Platforms
@@ -211,4 +232,3 @@ Supported Platforms
 -------------------
 
 - iOS
-
